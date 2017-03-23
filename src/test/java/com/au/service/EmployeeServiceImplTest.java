@@ -23,31 +23,48 @@ import static org.junit.Assert.assertNotNull;
  */
 public class EmployeeServiceImplTest {
 
-    Project projectA = new Project("A");
-    Project projectB = new Project("B");
-    Project projectC = new Project("C");
+    Project projectA;
+    Project projectB;
+    Project projectC;
 
-    Organization organization = new Organization("NewsCorp");
-    Employee simon = new Employee("Simon", organization, null, null);
+    Organization organization;
+    Employee simon;
 
-    Employee leonard = new Employee("Leonard", organization, simon, null);
-    Employee lisa = new Employee("Lisa", organization, simon, null);
+    Employee leonard;
+    Employee lisa;
 
-    //John works for Lisa and works on Project A and Project B
-    Employee john = new Employee("John", organization, lisa, Arrays.asList(projectA, projectB));
-    //Jack also works for Lisa and is the works on Project A
-    Employee jack = new Employee("Jack", organization, lisa, Arrays.asList(projectA));
+    Employee john;
+    Employee jack;
 
-    //James works for Leonard and works on Project A and Project C
-    Employee james = new Employee("James", organization, leonard, Arrays.asList(projectA, projectC));
+    Employee james;
 
-    //Lucy works for Leonard and works on Project B and Project C
-    Employee lucy = new Employee("Lucy", organization, leonard, Arrays.asList(projectB, projectC));
-    //Sam works for Leonard and works on Project B
-    Employee sam = new Employee("Sam", organization, leonard, Arrays.asList(projectB));
+    Employee lucy;
+    Employee sam;
 
     @Before
     public void setUp() {
+        projectA = new Project("A");
+        projectB = new Project("B");
+        projectC = new Project("C");
+
+        organization = new Organization("NewsCorp");
+        simon = new Employee("Simon", organization, null, null);
+
+        leonard = new Employee("Leonard", organization, simon, null);
+        lisa = new Employee("Lisa", organization, simon, null);
+
+        //John works for Lisa and works on Project A and Project B
+        john = new Employee("John", organization, lisa, Arrays.asList(projectA, projectB));
+        //Jack also works for Lisa and is the works on Project A
+        jack = new Employee("Jack", organization, lisa, Arrays.asList(projectA));
+
+        //James works for Leonard and works on Project A and Project C
+        james = new Employee("James", organization, leonard, Arrays.asList(projectA, projectC));
+
+        //Lucy works for Leonard and works on Project B and Project C
+        lucy = new Employee("Lucy", organization, leonard, Arrays.asList(projectB, projectC));
+        //Sam works for Leonard and works on Project B
+        sam = new Employee("Sam", organization, leonard, Arrays.asList(projectB));
     }
 
 
