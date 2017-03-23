@@ -17,14 +17,14 @@ it will send a request to each one of them and store the result in the database.
 
 public class URLPingerImpl implements URLPinger {
 
-    private final String TEST_DOMAIN = "test.com";
+    public final String TEST_DOMAIN = "test.com";
 
     private NoSQLDatabase db;
 
     public URLPingerImpl(NoSQLDatabase db) {
         this.db = db;
-        if (db == null) {
-            db = new NoSQLDatabaseImpl();
+        if (this.db == null) {
+            this.db = new NoSQLDatabaseImpl();
         }
     }
 
@@ -44,7 +44,7 @@ public class URLPingerImpl implements URLPinger {
             }
 
             final String data = response.getEntity(String.class);
-            final String cookieRequested = response.getCookies().size() > 0 ? "YES" : "NO";
+            final String cookieRequested = (response.getCookies() != null && !response.getCookies().isEmpty()) ? "YES" : "NO";
 
             final ResponseData responseData = new ResponseData(url, data, cookieRequested);
 

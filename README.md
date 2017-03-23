@@ -8,6 +8,7 @@
 Java 1.8 <br/>
 junit 4.2 <br/>
 jersey-client 1.8 <br/>
+mockito-all 1.10.19 <br/>
 
 ## How To Run
 
