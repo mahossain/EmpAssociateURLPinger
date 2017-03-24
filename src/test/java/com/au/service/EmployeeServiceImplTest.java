@@ -85,7 +85,7 @@ public class EmployeeServiceImplTest {
         Employee employee1 = john;
         Employee employee2 = jack;
         EmployeeService instance = EmployeeServiceImpl.getInstance();
-        Employee expResult = lisa;
+        Employee expResult = simon;
         Employee result = instance.findCommonManager(organization, employee1, employee2);
         assertEquals(expResult, result);
     }
